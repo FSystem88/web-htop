@@ -1,0 +1,12 @@
+[Unit]
+Description=Web HTOP
+
+[Service]
+ExecStart=shellinaboxd -t -b -p 8080 --no-beep -s '/htop/:nobody:nogroup:/:htop -d 10'
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Restart=on-failure
+RestartSec=1s
